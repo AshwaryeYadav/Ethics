@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethics in Code</title>
+    <title>Ethics within Engineering</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue Light', Arial, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -17,6 +17,9 @@
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+        }
+        header h1 {
+            font-family: 'Helvetica Neue Bold', Arial, sans-serif;
         }
         nav {
             display: flex;
@@ -42,6 +45,7 @@
         .hero h1 {
             margin: 0;
             font-size: 2.5rem;
+            font-family: 'Helvetica Neue Bold', Arial, sans-serif;
         }
         .hero p {
             margin: 1rem 0;
@@ -60,21 +64,37 @@
         .cta a:hover {
             background: #45a049;
         }
+        .banner {
+            background: #ffcc00;
+            color: #333;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 1.2rem;
+            font-family: 'Helvetica Neue Bold', Arial, sans-serif;
+            position: relative;
+        }
+        .timer {
+            font-size: 1.5rem;
+            color: #d9534f;
+        }
         .section {
             padding: 2rem 1rem;
         }
         .case-study, .tools, .blog {
             margin: 1rem auto;
             max-width: 800px;
+            text-align: center;
         }
         .section h2 {
             text-align: center;
             margin-bottom: 1rem;
+            font-family: 'Helvetica Neue Bold', Arial, sans-serif;
         }
         .card {
             background: #fff;
             padding: 1rem;
-            margin: 1rem 0;
+            margin: 1rem auto;
+            max-width: 600px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         footer {
@@ -85,11 +105,43 @@
             margin-top: 2rem;
         }
     </style>
+    <script>
+        function countdown() {
+            const eventDate = new Date().getTime() + 7 * 24 * 60 * 60 * 1000; // 7 days from now
+            const timer = document.getElementById('countdown');
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
+
+                if (distance < 0) {
+                    timer.innerHTML = "The discussion has started!";
+                    clearInterval(interval);
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                timer.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+
+            const interval = setInterval(updateTimer, 1000);
+            updateTimer();
+        }
+
+        document.addEventListener('DOMContentLoaded', countdown);
+    </script>
 </head>
 <body>
     <header>
-        <h1>Ethics in Code</h1>
+        <h1>Ethics within Engineering</h1>
     </header>
+    <div class="banner">
+        Join our discussion on "The Impact of Bias in Facial Recognition" in <span id="countdown" class="timer"></span>
+    </div>
     <nav>
         <a href="#home">Home</a>
         <a href="#case-studies">Case Studies</a>
@@ -99,8 +151,8 @@
         <a href="#contact">Contact</a>
     </nav>
     <section class="hero" id="home">
-        <h1>Building Better Technology with Ethics at Its Core</h1>
-        <p>Empowering software engineers and entrepreneurs to tackle ethical challenges in tech.</p>
+        <h1>Addressing Bias in AI: Ethical Challenges and Solutions</h1>
+        <p>Empowering engineers to create inclusive, responsible, and impactful technology.</p>
         <div class="cta">
             <a href="#case-studies">Explore Case Studies</a>
         </div>
@@ -108,38 +160,42 @@
     <section class="section" id="case-studies">
         <h2>Case Studies</h2>
         <div class="case-study card">
-            <h3>Facial Recognition Bias</h3>
-            <p>Explore how biased datasets can lead to unfair outcomes and harm marginalized communities.</p>
-        </div>
-        <div class="case-study card">
-            <h3>Data Privacy in EdTech</h3>
-            <p>Learn about ensuring transparency and privacy in collecting sensitive student data.</p>
+            <h3>The Impact of Bias in Facial Recognition Technology</h3>
+            <p>Explore how biased datasets can lead to unfair outcomes and harm marginalized communities. Learn actionable solutions to design inclusive systems.</p>
+            <a href="https://www.amnesty.ca/features/racial-bias-in-facial-recognition-algorithms/" target="_blank">Read More</a>
         </div>
     </section>
     <section class="section" id="tools">
         <h2>Interactive Tools</h2>
         <div class="tools card">
-            <h3>Ethical Decision-Making Simulator</h3>
-            <p>Role-play scenarios to practice making ethical decisions in software development.</p>
+            <h3>AI Bias Checker Tool</h3>
+            <p>Analyze datasets to identify and address potential biases.</p>
         </div>
         <div class="tools card">
-            <h3>AI Bias Checker</h3>
-            <p>Analyze datasets to identify and address potential biases.</p>
+            <h3>Ethical Decision-Making Simulator</h3>
+            <p>Role-play scenarios to practice resolving ethical dilemmas in tech.</p>
         </div>
     </section>
     <section class="section" id="blog">
         <h2>Blog</h2>
         <div class="blog card">
-            <h3>How to Build Privacy-First Applications</h3>
-            <p>Tips and strategies for designing applications with user privacy in mind.</p>
+            <h3>Understanding Fair AI: A Simple Guide</h3>
+            <p>Explore the best practices for creating fair and unbiased AI systems.</p>
+            <a href="https://www.readynez.com/en/blog/understanding-fair-ai-a-simple-guide/%23:~:text%3DBest%2520Practices%2520for%2520Fair%2520AI,for%2520developing%2520fair%2520AI%2520practices.&ved=2ahUKEwic1teB0aWKAxUqKlkFHUehLPQQFnoECBMQAw&usg=AOvVaw0J3tctlj0v1rWNl7MQ1A-L" target="_blank">Read More</a>
         </div>
         <div class="blog card">
-            <h3>Ethical Dilemmas in Software Licensing</h3>
-            <p>Understand the challenges in licensing software ethically.</p>
+            <h3>Ethics of Facial Recognition: Key Concerns</h3>
+            <p>Learn about the top six ethical concerns surrounding facial recognition technology.</p>
+            <a href="https://learn.g2.com/ethics-of-facial-recognition#:~:text=The%20top%20six%20ethical%20concerns,breaches%2C%20and%20inefficient%20legal%20support." target="_blank">Read More</a>
         </div>
     </section>
+    <section class="section" id="about">
+        <h2>About Us</h2>
+        <p>We are engineers focused on addressing the ethical challenges posed by emerging technologies. This platform centers on tackling biases in artificial intelligence, expanding on topics like facial recognition technology—a subject often overlooked in traditional discussions. Our mission is to provide new perspectives and actionable solutions to create technology that benefits everyone.</p>
+    </section>
     <footer>
-        <p>&copy; 2024 Ethics in Code. All rights reserved.</p>
+        <p>&copy; 2024 Ethics within Engineering. All rights reserved.</p>
     </footer>
 </body>
 </html>
+
