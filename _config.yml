@@ -1,7 +1,0 @@
-theme: jekyll-theme-minimal
-
-title: "Ethics in Code"
-description: "Building better technology with ethics at its core."
-baseurl: "" 
-url: "https://ashwaryeyadav.github.io" 
-markdown: kramdown
